@@ -1,0 +1,2 @@
+~ The Critical Thinking Paper ~
+===============================
