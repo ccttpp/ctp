@@ -1,21 +1,30 @@
 var http = require('http'), fs = require('fs');
  
 http.createServer(function (request, response) {
-    var filePath = './build' +
-            (request.url === '/' ? '/index.html' : request.url);
+    console.log('request.url: ' + request.url);
+    var filename = './build' + request.url +
+            (request.url === '/' ? 'index.html' : '');
+    console.log('filename: ' + filename);
 
-    fs.exists(filePath, function (exists) {
+    fs.exists(filename, function (exists) {
         if (exists) {
-            fs.readFile(filePath, function (error, content) {
-                if (error) {
+            console.log('filename exists');
+            fs.readFile(filename, function (err, data) {
+                if (err) {
+                    console.log('file cannot be read');
                     response.writeHead(500);
                     response.end();
                 } else {
-                    response.writeHead(200, { 'Content-Type': 'text/html' });
-                    response.end(content, 'utf-8');
+                    console.log('file read ok');
+                    response.writeHead(200, {
+                        'Content-Length': data.length,
+                        'Content-Type': 'text/html'
+                    });
+                    response.end(data, 'utf-8');
                 }
             });
         } else {
+            console.log('file does not exist');
             response.writeHead(404);
             response.end();
         }
