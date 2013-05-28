@@ -2,7 +2,8 @@ var http = require('http'), fs = require('fs');
  
 http.createServer(function (request, response) {
     console.log('request.url: ' + request.url);
-    var filename = './build' + request.url +
+    console.log('__dirname: ' + __dirname);
+    var filename = __dirname + '/build' + request.url +
             (request.url === '/' ? 'index.html' : '');
     console.log('filename: ' + filename);
 
