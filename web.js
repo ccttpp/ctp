@@ -3,7 +3,7 @@ var http = require('http'), fs = require('fs');
 http.createServer(function (request, response) {
     console.log('request.url: ' + request.url);
     console.log('__dirname: ' + __dirname);
-    var filename = __dirname + '/build' + request.url +
+    var filename = __dirname + '/heroku' + request.url +
             (request.url === '/' ? 'index.html' : '');
     console.log('filename: ' + filename);
 
@@ -17,9 +17,11 @@ http.createServer(function (request, response) {
                     response.end();
                 } else {
                     console.log('file read ok');
+                    var ext = filename.substring(filename.lastIndexOf('.') + 1);
+                    console.log('file ext: ' + ext);
                     response.writeHead(200, {
                         'Content-Length': data.length,
-                        'Content-Type': 'text/html'
+                        'Content-Type': 'text/' + (ext === 'txt' ? 'plain' : 'html')
                     });
                     response.end(data, 'utf-8');
                 }

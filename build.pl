@@ -6,7 +6,7 @@ use warnings;
 &build;
 
 sub build {
-    my $outdir = "./build";
+    my $outdir = "./heroku";
 
     `rm -rf $outdir`;
     `mkdir $outdir`;
@@ -18,8 +18,11 @@ sub build {
 sub misc {
     my ($outdir) = @_;
 
+    `cp ./misc/robots.txt $outdir`;
+
     `mkdir $outdir/misc`;
-    `cp ./misc/* $outdir/misc`;
+    `cp ./misc/setup.html $outdir/misc`;
+    `cp ./misc/todo.html $outdir/misc`;
 }
 
 sub index {
@@ -81,7 +84,7 @@ sub read {
 
 sub sections {
     my ($outdir) = @_;
-    my @sections = split /\n/, `find . -type d | grep -v build | grep -v template | grep -v misc`;
+    my @sections = split /\n/, `find . -type d | grep -v heroku | grep -v template | grep -v misc`;
     my @articles = ();
 
     foreach (@sections) {
