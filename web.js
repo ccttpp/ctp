@@ -1,10 +1,10 @@
-var http = require('http'), fs = require('fs'), path = require('path');
+var http = require('http'), fs = require('fs');
  
 http.createServer(function (request, response) {
     var filePath = './build' +
             (request.url === '/' ? '/index.html' : request.url);
 
-    path.exists(filePath, function (exists) {
+    fs.exists(filePath, function (exists) {
         if (exists) {
             fs.readFile(filePath, function (error, content) {
                 if (error) {
