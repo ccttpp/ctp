@@ -1,9 +1,0 @@
-<div class="quiz">
-    <h2>{title}</h2>
-    <div class="content">
-        <p>{question}</p>
-        <span class="hint">{answer}</span>
-    </div>
-    <a href="" class="more-text"><span>Similar reflections </span>&gt;&gt;</a>
-    <div class="more-bg"></div>
-</div>

@@ -147,12 +147,7 @@ p {
 {essay}
 {essay}
 <div class="info">
-Copyright (c) 2013 CTP.  Site design and content by CTP.  All content provided under the MIT license.
+Copyright (c) 2013 CTP.  Site design and content by CTP.  All content provided under the <a href="https://raw.github.com/ccttpp/ctp/master/LICENSE">MIT license</a>.
 </div>
-<script>
-(function () {
-'use strict';
-}());
-</script>
 </body>
 </html>
