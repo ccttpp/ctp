@@ -1,8 +1,14 @@
 var http = require('http'), fs = require('fs');
  
 http.createServer(function (request, response) {
-    var filename = __dirname + '/heroku' + request.url +
-            (request.url === '/' ? 'index.html' : '');
+    var filename = __dirname + '/site' + request.url;
+
+    if (filename.lastIndexOf('.') === -1) {
+        if (filename.charAt(filename.length - 1) !== '/') {
+            filename += '/';
+        }
+        filename += 'index.html';
+    }
 
     fs.exists(filename, function (exists) {
         if (exists) {
@@ -14,7 +20,8 @@ http.createServer(function (request, response) {
                     var ext = filename.substring(filename.lastIndexOf('.') + 1);
                     response.writeHead(200, {
                         'Content-Length': data.length,
-                        'Content-Type': 'text/' + (ext === 'txt' ? 'plain' : 'html')
+                        'Content-Type': 'text/' +
+                                (ext === 'txt' ? 'plain' : 'html')
                     });
                     response.end(data, 'utf-8');
                 }

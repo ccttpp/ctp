@@ -1,0 +1,8 @@
+<div class="essay">
+    <h2>{title}</h2>
+    <div class="content">
+{text}
+    </div>
+    <a href="./essay/" class="more-text"><span>Similar articles </span>&gt;&gt;</a>
+    <div class="more-bg"></div>
+</div>

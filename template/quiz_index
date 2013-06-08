@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Quizzes - The Critical Thinking Paper</title>
+<style>
+
+
+body, h1, h2, div, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    border: 2px solid #aaa;
+    margin: 2em auto;
+    min-width: 900px;
+    padding: 1em 2em 2em;
+    width: 70%;
+
+    box-shadow: 0px 0px 100px 50px #ccc;
+    -webkit-box-shadow: 0px 0px 100px 50px #ccc;
+    -moz-box-shadow: 0px 0px 100px 50px #ccc;
+}
+
+h1 {
+    font-family: cursive;
+    font-size: 3em;
+    font-weight: normal;
+    text-align: center;
+    text-shadow: 2px 2px 0 #ddd;
+}
+
+p {
+    text-indent: 2em;
+}
+
+.article {
+    border: 2px solid gray;
+    margin: 1em 0 2em 0;
+    padding: 1em 0 0 2em;
+    position: relative;
+    width: 45%;
+}
+
+.article:nth-child(odd) {
+    float: left;
+}
+
+.article:nth-child(even) {
+    float: right;
+}
+
+.content {
+    margin-top: 0.5em;
+}
+
+.article .content {
+    height: 300px;
+    overflow-y: auto;
+    padding-right: 2em;
+}
+
+/* Setting padding-bottom on .content has no effect on Firefox.
+   Setting it on the last p within .content works on all browsers. */
+.article .content p:last-child {
+    padding-bottom: 10em;
+}
+
+.reflection {
+    clear: both;
+    text-align: center;
+    position: relative;
+    border: 3px solid gray;
+    margin: 1em 0;
+    padding: 2em;
+}
+
+.reflection .content {
+    font-style: italic;
+    font-size: larger;
+}
+
+.reflection .content p {
+    margin-bottom: 1em;
+}
+
+.hint {
+    color: #ccc;
+    padding: 1em;
+    margin-top: 0.5em;
+    text-shadow: 20px 0 20px #000, -20px 0 20px #000;
+}
+.hint:hover {
+    color: #000;
+}
+
+.more-text {
+    bottom: 0;
+    color: #f00;
+    cursor: pointer;
+    font-size: 6em;
+    font-weight: bold;
+    position: absolute;
+    text-decoration: none;
+}
+
+.reflection .more-text {
+    display: block;
+}
+
+.more-text span {
+    display: none;
+}
+
+.more-bg {
+    border: 1px solid gray;
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+}
+
+.article .more-bg {
+    border: none;
+    width: 100%;
+    height: 10em;
+    z-index: -1;
+
+    /* fallback */
+    background-color: #000;
+
+    /* Safari 4-5, Chrome 1-9 */
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#000));
+
+    /* Safari 5.1, Chrome 10+ */
+    background: -webkit-linear-gradient(top, #fff, #000);
+
+    /* Firefox 3.6+ */
+    background: -moz-linear-gradient(top, #fff, #000);
+
+    /* IE 10 */
+    background: -ms-linear-gradient(top, #fff, #000);
+
+    /* Opera 11.10+ */
+    background: -o-linear-gradient(top, #fff, #000);
+}
+
+.info {
+    clear: both;
+    text-align: center;
+    color: gray;
+}
+
+
+</style>
+</head>
+<body>
+<h1>~ The Critical Thinking Paper ~</h1>
+<h2>Quizzes</h2>
+<ul>
+{list}
+</ul>
+<div class="info">
+    <p>Copyright (c) 2013 OPD.  Site design and content by OPD.  All content provided under the MIT license.</p>
+</div>
+<script>
+(function () {
+'use strict';
+}());
+</script>
+</body>
+</html>
