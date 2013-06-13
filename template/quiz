@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>The Critical Thinking Paper</title>
+<title>{title} - Quizzes - The Critical Thinking Paper</title>
 <style>
 body, h1, h2, div, p {
     margin: 0;
@@ -134,102 +134,17 @@ p {
     clear: both;
     color: gray;
     font-size: smaller;
+    margin-top: 1em;
     text-align: center;
 }
 </style>
 </head>
 <body>
-
-
-<h1>~ Online Paper Demo ~</h1>
-
-<div class="essay">
-    <h2>Lorum Ipsum Title 1</h2>
-    <div class="content">
-        <p>This is the first paragraph, usually followed by another paragraph, and maybe even more!
-        And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.
-        And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.
-        And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.
-        And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.
-        And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.
-        And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.
-        And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.
-        And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.
-        And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.
-        And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.
-        And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.
-        And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.
-        And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.
-        And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.
-        And certainly, here it is: another paragraph.  At the end of the essay should be an affordance for the user to view the entire essay.</p>
-    </div>
-    <a href="" class="more-text"><span>Similar essays </span>&gt;&gt;</a>
-    <div class="more-bg"></div>
-</div>
-
-<div class="essay">
-    <h2>Lorum Ipsum Title 2</h2>
-    <div class="content">
-        <p>This is the first paragraph, usually followed by another paragraph, and maybe even more!</p>
-        <p>And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.</p>
-        <p>And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.</p>
-        <p>And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.</p>
-        <p>And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.</p>
-        <p>And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.</p>
-        <p>And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.</p>
-        <p>And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.</p>
-        <p>And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.</p>
-        <p>And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.</p>
-        <p>And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.</p>
-        <p>And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.</p>
-        <p>And certainly, here it is: another paragraph.  At the end of the essay should be an affordance for the user to view the entire essay.</p>
-    </div>
-    <a href="" class="more-text"><span>Similar essays </span>&gt;&gt;</a>
-    <div class="more-bg"></div>
-</div>
-
-<div class="quiz">
-    <h2>Lorum Ipsum Title</h2>
-    <div class="content">
-        <p>"Here is an exercise for the reader. How would you do A or B?"</p>
-        <span class="hint">"A hint can be revealed below if needed."</span>
-    </div>
-    <a href="" class="more-text"><span>Similar quizs </span>&gt;&gt;</a>
-    <div class="more-bg"></div>
-</div>
-
-<div class="essay">
-    <h2>Lorum Ipsum Title 3</h2>
-    <div class="content">
-        <p>This is the first paragraph, usually followed by another paragraph, and maybe even more!</p>
-        <p>And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.</p>
-        <p>And certainly, here it is: another paragraph.  At the end of the essay should be an affordance for the user to view the entire essay.</p>
-    </div>
-    <a href="" class="more-text"><span>Similar essays </span>&gt;&gt;</a>
-    <div class="more-bg"></div>
-</div>
-
-<div class="essay">
-    <h2>Lorum Ipsum Title 4</h2>
-    <div class="content">
-        <p>This is the first paragraph, usually followed by another paragraph, and maybe even more!</p>
-        <p>And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.</p>
-        <p>And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.</p>
-        <p>And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.</p>
-        <p>And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.</p>
-        <p>And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.</p>
-        <p>And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.</p>
-        <p>And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.</p>
-        <p>And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.</p>
-        <p>And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.</p>
-        <p>And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.</p>
-        <p>And so it is, yet another paragraph has been added to the list.  So far so good, this all serves as padding to the essay.</p>
-        <p>And certainly, here it is: another paragraph.  At the end of the essay should be an affordance for the user to view the entire essay.</p>
-    </div>
-    <a href="" class="more-text"><span>Similar essays </span>&gt;&gt;</a>
-    <div class="more-bg"></div>
-</div>
-
+<h1>~ The Critical Thinking Paper ~</h1>
+<h2>{title}</h2>
+<h3>{date}</h3>
+<div>{question}</div>
+<div>{answer}</div>
 <div class="info">
 Copyright (c) 2013 CTP.  Site design and content by CTP.  All content provided under the <a href="https://raw.github.com/ccttpp/ctp/master/LICENSE">MIT license</a>.
 </div>

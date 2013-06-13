@@ -1,5 +1,6 @@
 <div class="quiz">
     <h2>{title}</h2>
+    <h3>{date}</h3>
     <div class="content">
         <p>{question}</p>
         <span class="hint">{answer}</span>
