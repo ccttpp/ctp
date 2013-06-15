@@ -95,9 +95,9 @@ p {
     bottom: 0;
     color: #f00;
     cursor: pointer;
-    font-size: 5em;
+    font-size: 4em;
     font-weight: bold;
-    left: 0.125em;
+    left: 0.25em;
     letter-spacing: -0.25em;
     padding-right: 0.25em;
     position: absolute;
@@ -135,8 +135,8 @@ p {
 
 .social {
     position: absolute;
-    bottom: 2em;
-    right: 0;
+    bottom: 1.5em;
+    right: 2.25em;
 }
 
 .info {
