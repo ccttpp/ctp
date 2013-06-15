@@ -1,9 +1,16 @@
 <div class="essay">
-    <h2>{title}</h2>
-    <h3>{date}</h3>
+    <h2>{{title}}</h2>
+    <h3>{{date}}</h3>
     <div class="content">
-{text}
+{{text}}
     </div>
-    <a href="./essay/" class="more-text"><span>Similar articles </span>&gt;&gt;</a>
+    <div class="social">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="{{pageurl}}" data-text='Good article! "{{title}}"' data-hashtags="CriticalThinking">Tweet</a>
+
+        <div class="g-plusone" data-size="medium" data-href="{{pageurl}}"></div>
+
+        <div class="fb-like" data-href="{{pageurl}}" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+    </div>
+    <a href="./essay/" class="more-text" title="More like this"><span>Similar articles </span>&gt;&gt;</a>
     <div class="more-bg"></div>
 </div>

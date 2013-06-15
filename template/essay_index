@@ -142,7 +142,7 @@ p {
 <h1>~ The Critical Thinking Paper ~</h1>
 <h2>Essays</h2>
 <ul>
-{list}
+{{list}}
 </ul>
 <div class="info">
 Copyright (c) 2013 CTP.  Site design and content by CTP.  All content provided under the <a href="https://raw.github.com/ccttpp/ctp/master/LICENSE">MIT license</a>.

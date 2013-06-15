@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>{title} - Quizzes - The Critical Thinking Paper</title>
+<title>{{title}} - Quizzes - The Critical Thinking Paper</title>
 <style>
 body, h1, h2, div, p {
     margin: 0;
@@ -27,6 +27,10 @@ h1 {
     font-weight: normal;
     text-align: center;
     text-shadow: 2px 2px 0 #ddd;
+}
+h1 a {
+    color: #000;
+    text-decoration: none;
 }
 
 p {
@@ -130,6 +134,10 @@ p {
     z-index: -1;
 }
 
+.social {
+    margin-top: 1em;
+}
+
 .info {
     clear: both;
     color: gray;
@@ -140,13 +148,39 @@ p {
 </style>
 </head>
 <body>
-<h1>~ The Critical Thinking Paper ~</h1>
-<h2>{title}</h2>
-<h3>{date}</h3>
-<div>{question}</div>
-<div>{answer}</div>
+<h1><a href="/">~ The Critical Thinking Paper ~</a></h1>
+<h3>{{date}}</h3>
+<h2>{{title}}</h2>
+<div>"{{question}}"</div>
+<div>"{{answer}}"</div>
+
+<div class="social">
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="{{pageurl}}" data-text='{{title}}: "{{question}}"' data-hashtags="CriticalThinking">Tweet</a>
+<div class="g-plusone" data-size="medium" data-href="{{pageurl}}"></div>
+<div class="fb-like" data-href="{{pageurl}}" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+</div>
+
 <div class="info">
 Copyright (c) 2013 CTP.  Site design and content by CTP.  All content provided under the <a href="https://raw.github.com/ccttpp/ctp/master/LICENSE">MIT license</a>.
 </div>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "https://connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
 </body>
 </html>

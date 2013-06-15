@@ -95,8 +95,11 @@ p {
     bottom: 0;
     color: #f00;
     cursor: pointer;
-    font-size: 6em;
+    font-size: 5em;
     font-weight: bold;
+    left: 0.125em;
+    letter-spacing: -0.25em;
+    padding-right: 0.25em;
     position: absolute;
     text-decoration: none;
 }
@@ -130,6 +133,12 @@ p {
     z-index: -1;
 }
 
+.social {
+    position: absolute;
+    bottom: 2em;
+    right: 0;
+}
+
 .info {
     clear: both;
     color: gray;
@@ -141,13 +150,33 @@ p {
 
 <body>
 <h1>~ The Critical Thinking Paper ~</h1>
-{essay}
-{essay}
-{quiz}
-{essay}
-{essay}
+{{essay}}
+{{essay}}
+{{quiz}}
+{{essay}}
+{{essay}}
 <div class="info">
 Copyright (c) 2013 CTP.  Site design and content by CTP.  All content provided under the <a href="https://raw.github.com/ccttpp/ctp/master/LICENSE">MIT license</a>.
 </div>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "https://connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
 </body>
 </html>

@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-&build;
+build();
 
 sub build {
     my $outdir = "./site";
@@ -11,8 +11,7 @@ sub build {
     my $continue_processing_index = 1;
     my $main_index_content;
 
-    $main_index_content = &read("./template/index");
-    $main_index_content =~ s/[\n\r]/ /g;
+    $main_index_content = read_as_string("./template/index", 1);
 
     `rm -rf $outdir`;
     `mkdir $outdir`;
@@ -25,12 +24,12 @@ sub build {
         my $list;
         my $fill;
 
-        $data = &read($filepath);
-        $data =~ s/[\n\r]/ /g;
+        $data = read_as_string($filepath, 1);
 
         $lookup{filepath} = $filepath;
         $lookup{filename} = substr($articlename, length("yyyymmdd-")) . ".html";
         $lookup{section} = $sectionname;
+        $lookup{pageurl} = "https://ctp.herokuapp.com/$sectionname/$lookup{filename}";
         $lookup{$1} = $2 while ($data =~ /<(\w+)>(.+?)<\/\1>/g);
 
         if (exists $article_index_lists{$sectionname}) {
@@ -39,24 +38,24 @@ sub build {
             `mkdir $outdir/$sectionname`;
             $list = "";
         }
-        $list .= &fill("./template/" . $sectionname . "_item", \%lookup);
+        $list .= fill("./template/" . $sectionname . "_item", \%lookup);
         $article_index_lists{$sectionname} = $list;
 
-        if ($continue_processing_index and $main_index_content =~ /{$sectionname}/) {
-            $fill = &fill("./template/" . $sectionname . "_in_index", \%lookup);
-            $main_index_content =~ s/{$sectionname}/$fill/;
+        if ($continue_processing_index and $main_index_content =~ /{{$sectionname}}/) {
+            $fill = fill("./template/" . $sectionname . "_in_index", \%lookup);
+            $main_index_content =~ s/{{$sectionname}}/$fill/;
         } else {
             $continue_processing_index = 0;
         }
 
         open FILE, ">", "$outdir/$sectionname/$lookup{filename}" or die $!;
-        print FILE &fill("./template/" . $sectionname, \%lookup);
+        print FILE fill("./template/" . $sectionname, \%lookup);
         close FILE
     }
 
     foreach (keys %article_index_lists) {
         open FILE, ">", "$outdir/$_/index.html" or die $!;
-        print FILE &fill("./template/" . $_ . "_index", {
+        print FILE fill("./template/" . $_ . "_index", {
             list => $article_index_lists{$_}
         });
         close FILE;
@@ -73,10 +72,14 @@ sub build {
     `cp ./misc/todo.html $outdir/misc`;
 }
 
-sub read {
-    my ($file) = @_;
+sub read_as_string {
+    my ($file, $flatten) = @_;
+    my $data;
  
-    return do { local $/ = undef; open my $fh, "<", $file or die $!; <$fh>; };
+    $data = do { local $/ = undef; open my $fh, "<", $file or die $!; <$fh>; };
+    $data =~ s/[\n\r]/ /g if $flatten;
+
+    return $data;
 }
 
 sub fill {
@@ -86,12 +89,12 @@ sub fill {
     my $data;
     my $key;
 
-    $template = &read($templatefile);
+    $template = read_as_string($templatefile);
 
-    while ($template =~ /{(.+?)}/) {
+    while ($template =~ /{{(.+?)}}/) {
         $key = $1;
         die "'$key' value needed by $templatefile not in lookup" if !$lookup{$key};
-        $template =~ s/{$key}/$lookup{$key}/;
+        $template =~ s/{{$key}}/$lookup{$key}/;
     }
 
     return $template;
