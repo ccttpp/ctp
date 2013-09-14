@@ -1,0 +1,290 @@
+body, h1, h2, h3, div, p {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	box-shadow: 0px 0px 50px 25px #aaa;
+	-webkit-box-shadow: 0px 0px 50px 25px #aaa;
+	-moz-box-shadow: 0px 0px 50px 25px #aaa;
+
+	border: 2px solid #aaa;
+	margin: 2em auto;
+	min-width: 900px;
+	padding: 1em 2em 2em;
+	width: 70%;
+}
+
+h1 {
+	float: left;
+	border: 1px solid #000000;
+	color: #ffffff;
+	position: relative;
+	margin-right: 2em;
+	font: inherit;
+}
+
+h1 .the {
+	display: block;
+	writing-mode: tb-rl;
+	-webkit-transform: rotate(-90deg);	
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+	position: absolute;
+	left: -9px;
+	bottom: 9px;
+	font-size: 19px;
+	background-color: blue;
+	padding: 1px 3px;
+	text-align: center;
+}
+
+h1 .critical {
+	display: block;
+	text-align: center;
+	font-size: 35px;
+	line-height: 35px;
+	letter-spacing: 0.1em;
+	padding: 2px 30px 2px 4px;
+	background-color: #1e528c;
+	text-transform: uppercase;
+}
+
+h1 .thinking {
+	display: block;
+	background-color: #2c7ad0;
+	text-align: center;
+	font-size: 35px;
+	line-height: 40px;
+	font-weight: bold;
+	padding: 0px 30px 2px 27px;
+}
+
+h1 .papers {
+	display: block;
+	writing-mode: tb-rl;
+	-webkit-transform: rotate(-90deg);	
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+	position: absolute;
+	right: 10px; /* TODO */
+	bottom: 19px; /* TODO */
+	font-size: 19px;
+	background-color: blue;
+	padding: 2px 8px;
+}
+
+*:first-child+html h1 .papers { right: -28px; /* TODO */ } /* IE7 positions element differently to IE6 & 8 */
+
+h1 span:nth-of-type(4) {
+	right: -27px;
+	bottom: 27px;
+	writing-mode: lr-tb; 
+}
+
+h3 {
+	font-size: smaller;
+	margin-bottom: 1em;
+}
+
+ul {
+	margin: 3em 0 2em 0;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+p {
+	margin-bottom: 0.75em;
+	text-indent: 2em;
+}
+
+.menu {
+	font-size: smaller;
+	margin-bottom: 1em;
+}
+.menu .current {
+	font-weight: bold;
+}
+
+.date {
+	color: gray;
+	font-size: smaller;
+	margin: 0.25em 0 2em;
+}
+
+.essay {
+	border: 2px solid gray;
+	margin: 1em 0 2em 0;
+	padding: 1em 0 0 2em;
+	position: relative;
+	width: 45%;
+}
+
+.essay.first{
+	margin-left: 276px;
+	width: auto;
+}
+
+.essay:nth-of-type(odd) {
+	float: right;
+}
+
+.essay.first:nth-of-type(odd) {
+	float: none;
+}
+
+.essay:nth-of-type(even) {
+	float: left;
+}
+
+.essay.first:nth-of-type(even) {
+	float: none;
+}
+
+.content {
+	margin-top: 1em;
+}
+
+.essay .content {
+	height: 300px;
+	overflow-y: auto;
+	padding-right: 2em;
+}
+
+.essay .content p:last-child {
+	padding-bottom: 10em;
+}
+
+.quiz {
+	border: 2px solid gray;
+	clear: both;
+	margin: 1em 0;
+	padding: 2em;
+	position: relative;
+	text-align: center;
+}
+
+.quiz .content {
+	font-size: larger;
+	font-style: italic;
+}
+
+.quiz .content p:first-child {
+	margin-bottom: 1em;
+	text-indent: 0;
+}
+
+.hint {
+	color: #ccc;
+	display: inline;
+	text-shadow: 20px 0 20px #000, -20px 0 20px #000;
+}
+.hint:hover {
+	color: #000;
+}
+
+.more-text {
+	bottom: 0;
+	color: #f00;
+	cursor: pointer;
+	font-size: 4em;
+	font-weight: bold;
+	left: 0.25em;
+	letter-spacing: -0.25em;
+	padding-right: 0.25em;
+	position: absolute;
+}
+.more-text:hover {
+	text-decoration: none;
+}
+
+.quiz .more-text {
+	display: block;
+}
+
+.more-text span {
+	display: none;
+}
+
+.more-bg {
+	border: 1px solid gray;
+	bottom: -1px;
+	position: absolute;
+	right: -1px;
+}
+
+.essay .more-bg {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#000));
+	background: -webkit-linear-gradient(top, #fff, #000);
+	background: -moz-linear-gradient(top, #fff, #000);
+	background: -ms-linear-gradient(top, #fff, #000);
+	background: -o-linear-gradient(top, #fff, #000);
+	background-color: #000;
+
+	border: none;
+	height: 10em;
+	width: 100%;
+	z-index: -1;
+}
+
+.tags {
+	color: gray;
+	font-size: smaller;
+	margin-top: 1em;
+}
+
+.tagcloud {
+	border: 2px solid gray;
+	height: 276px;
+	overflow: auto;
+	padding: 0.25em;
+	position: absolute;
+	top: 160px;
+	width: 231px;
+}
+.tagcloud .top {
+	font-size: xx-large;
+}
+.tagcloud .big {
+	font-size: x-large;
+}
+.tagcloud .above {
+	font-size: large;
+}
+.tagcloud .below {
+	font-size: small;
+}
+.tagcloud .small {
+	font-size: x-small;
+}
+.tagcloud .bottom {
+	font-size: xx-small;
+}
+.tagcloud .hide {
+	display: none;
+}
+
+.social {
+	position: absolute;
+	bottom: 1.5em;
+	right: 2.25em;
+}
+
+.info {
+	clear: both;
+	color: gray;
+	font-size: smaller;
+	margin-top: 1em;
+	text-align: center;
+}
+
