@@ -1,1 +1,1 @@
-<li>{{date}}: <a href="{{filename}}">{{title}}</a></li>
+<li><a href="{{filename}}">{{date}}: {{title}}</a></li>

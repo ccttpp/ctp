@@ -1,5 +1,5 @@
 var http = require('http'), fs = require('fs');
- 
+
 http.createServer(function (request, response) {
     var filename = __dirname + '/site' + request.url;
 
@@ -20,8 +20,7 @@ http.createServer(function (request, response) {
                     var ext = filename.substring(filename.lastIndexOf('.') + 1);
                     response.writeHead(200, {
                         'Content-Length': data.length,
-                        'Content-Type': 'text/' +
-                                (ext === 'txt' ? 'plain' : 'html')
+                        'Content-Type': 'text/' + (ext === 'txt' ? 'plain' : ext)
                     });
                     response.end(data, 'utf-8');
                 }
