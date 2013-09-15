@@ -13,7 +13,7 @@
 <span class="papers">Papers</span>
 </h1>
 
-<div class="menu">Sections: <span class="current">Front</span> | <a href="essay">Essays</a> | <a href="quiz">Quizzes</a></div>
+<div class="menu">Sections: <span class="current">Front</span> | <a href="essay/">Essays</a> | <a href="quiz/">Quizzes</a></div>
 
 {{essay}}
 {{quiz}}
