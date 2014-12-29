@@ -2,22 +2,22 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>{{title}} - Essays - The Critical Thinking Papers</title>
+<title>{{title}} - Essays - The Critical Thinker's Paper</title>
 <link href="../css/all.css" media="all" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <h1>
 <span class="the">The</span> 
 <span class="critical">Critical</span> 
-<span class="thinking">Thinking</span> 
-<span class="papers">Papers</span>
+<span class="thinkers">Thinker's</span> 
+<span class="paper">Paper</span>
 </h1>
 
 <div class="menu">Sections: <a href="../">Front</a> | <a class="current" href="../essay/">Essays</a> | <a href="../quiz/">Quizzes</a></div>
 
 <h2>{{title}}</h2>
 
-<div class="date">Written on {{date}} (<a href="https://github.com/ccttpp/ctp/commits/master/{{filepath}}">edit log available</a>)</div>
+<div class="date">Written on {{date}} (<a href="https://github.com/criticalthinkers/ctp/commits/master/{{filepath}}">edit log available</a>)</div>
 
 <div>{{text}}</div>
 
@@ -30,7 +30,7 @@
 <div class="tags">Tags: {{tags}}</div>
 
 <p class="info">
-Copyright (c) 2013 CTP.  Site design and content by CTP.  All content provided under the <a href="https://raw.github.com/ccttpp/ctp/master/LICENSE">MIT license</a>.
+Copyright (c) {{year}} The Critical Thinker's Paper.<br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
 </p>
 
 <div id="fb-root"></div>

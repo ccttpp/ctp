@@ -6,8 +6,8 @@ use warnings;
 build();
 
 sub build {
-    my $outdir = "./site";
-    my $herokuserver = "https://criticalthinking.herokuapp.com";
+    my $outdir = "../criticalthinkers.github.io";
+    my $siteurl = "https://criticalthinkers.github.io";
     my %article_index_lists = ();
     my %all_tags = ();
     my %tagcloud_class_lookup;
@@ -15,11 +15,12 @@ sub build {
     my $continue_processing_index = 1;
     my $main_index_content;
     my $tagcloud = "";
+    my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime();
+    $year += 1900;
 
     $main_index_content = read_as_string("./template/index", 1);
 
-    `rm -rf $outdir`;
-    `mkdir $outdir`;
+    `find $outdir/?* -maxdepth 0 -exec rm -rf {} \\;`;
 
     foreach (split /\n/, `find . -regex "\./[a-z]+/[0-9]+-.*" | sort -nr -t "/" -k3`) {
         my $filepath = $_;
@@ -31,10 +32,11 @@ sub build {
 
         $data = read_as_string($filepath, 1);
 
+        $lookup{year} = $year;
         $lookup{filepath} = $filepath;
         $lookup{filename} = substr($articlename, length("yyyymmdd-")) . ".html";
         $lookup{section} = $sectionname;
-        $lookup{pageurl} = "$herokuserver/$sectionname/$lookup{filename}";
+        $lookup{pageurl} = "$siteurl/$sectionname/$lookup{filename}";
         $lookup{$1} = $2 while ($data =~ /<(\w+)>(.+?)<\/\1>/g);
 
         if (exists $article_index_lists{$sectionname}) {
@@ -78,8 +80,9 @@ sub build {
     foreach (keys %article_index_lists) {
         open FILE, ">", "$outdir/$_/index.html" or die $!;
         print FILE fill("\$article_index_lists{$_}", "./template/" . $_ . "_index", {
+            year => $year,
             list => $article_index_lists{$_},
-            pageurl => "$herokuserver/$_"
+            pageurl => "$siteurl/$_"
         });
         close FILE;
     }
@@ -90,20 +93,14 @@ sub build {
         $tagcloud .= "<span class=\"" . $tagcloud_class_lookup{$all_tags{$_}} . "\">" . $_ . "</span>";
     }
 
+    $main_index_content =~ s/{{year}}/$year/;
     $main_index_content =~ s/{{tags}}/$tagcloud/;
     open FILE, ">", "$outdir/index.html" or die $!;
     print FILE $main_index_content;
     close FILE;
 
-    `cp ./misc/robots.txt $outdir`;
-
     `mkdir $outdir/css`;
-    `cp ./misc/all.css $outdir/css`;
-
-    `mkdir $outdir/misc`;
-    `cp ./misc/setup.html $outdir/misc`;
-    `cp ./misc/thanks.html $outdir/misc`;
-    `cp ./misc/todo.html $outdir/misc`;
+    `cp ./css/all.css $outdir/css`;
 }
 
 sub read_as_string {
