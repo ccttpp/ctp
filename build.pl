@@ -101,6 +101,8 @@ sub build {
 
     `mkdir $outdir/css`;
     `cp ./css/all.css $outdir/css`;
+
+    `cp ./README.site $outdir/README`;
 }
 
 sub read_as_string {
