@@ -102,6 +102,7 @@ sub build {
     `mkdir $outdir/css`;
     `cp ./css/all.css $outdir/css`;
 
+    `cp ./LICENSE.md.site $outdir/LICENSE.md`;
     `cp ./README.site $outdir/README`;
 }
 
