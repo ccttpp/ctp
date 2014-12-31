@@ -96,11 +96,13 @@ ul {
 }
 
 a {
-	color: inherit;
 	text-decoration: none;
 }
 a:hover {
 	text-decoration: underline;
+}
+a:not([class]) {
+	color: inherit;
 }
 
 p {
@@ -235,6 +237,12 @@ p {
 	height: 10em;
 	width: 100%;
 	z-index: -1;
+}
+
+.context {
+	color: gray;
+	font-size: smaller;
+	margin: 1em 0;
 }
 
 .tags {
