@@ -15,6 +15,7 @@ sub build {
     my $continue_processing_index = 1;
     my $main_index_content;
     my $tagcloud = "";
+    my $key;
     my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime();
     $year += 1900;
 
@@ -93,8 +94,13 @@ sub build {
         $tagcloud .= "<span class=\"" . $tagcloud_class_lookup{$all_tags{$_}} . "\">" . $_ . "</span>";
     }
 
-    $main_index_content =~ s/{{year}}/$year/;
+    $main_index_content =~ s/{{pageurl}}/$siteurl/;
     $main_index_content =~ s/{{tags}}/$tagcloud/;
+    $main_index_content =~ s/{{year}}/$year/;
+    if ($main_index_content =~ /{{(.+?)}}/) {
+        $key = $1;
+        die "'$key' value needed by ./template/index not substituted";
+    }
     open FILE, ">", "$outdir/index.html" or die $!;
     print FILE $main_index_content;
     close FILE;
@@ -146,7 +152,7 @@ sub get_tagcloud_class_lookup {
         $max = $tags{$_} if $tags{$_} > $max;
         $min = $tags{$_} if $tags{$_} < $min;
     }
-print "max: $max\nmin: $min\n";
+# TODO: remove: print "max: $max\nmin: $min\n";
 
     $lookup{1} = "below";
     $lookup{2} = "normal";
