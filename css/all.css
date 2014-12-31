@@ -101,7 +101,8 @@ a {
 a:hover {
 	text-decoration: underline;
 }
-a:not([class]) {
+a:not([class]),
+a.current {
 	color: inherit;
 }
 
