@@ -138,6 +138,8 @@ sub fill {
         $template =~ s/{{$key}}/$lookup{$key}/;
     }
 
+    $template =~ s/([^-])--([^-])/$1&mdash;$2/g;
+
     return $template;
 }
 
