@@ -17,7 +17,7 @@
 
 <h2>{{title}}</h2>
 
-<div class="date">Written on {{date}} (<a href="https://github.com/criticalthinkers/criticalthinkers/commits/master/{{filepath}}">edit log available</a>)</div>
+<div class="date">Written on {{date}} (<a target="_blank" href="https://github.com/criticalthinkers/criticalthinkers/commits/master/{{filepath}}">edit log available</a>)</div>
 
 <div class="context">Context: {{context}}</div>
 
@@ -32,7 +32,7 @@
 <div class="tags">Tags: {{tags}}</div>
 
 <p class="info">
-Copyright (c) 2013-{{year}} The Critical Thinker's Paper.<br /><i xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">{{title}}</i> by <a xmlns:cc="http://creativecommons.org/ns#" href="{{pageurl}}" property="cc:attributionName" rel="cc:attributionURL">The Critical Thinker's Paper</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+Copyright (c) 2013-{{year}} The Critical Thinker's Paper.<br /><i xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">{{title}}</i> by <a xmlns:cc="http://creativecommons.org/ns#" href="{{pageurl}}" property="cc:attributionName" rel="cc:attributionURL">The Critical Thinker's Paper</a> is licensed under a <a target="_blank" rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
 </p>
 
 <div id="fb-root"></div>

@@ -28,7 +28,7 @@
 </div>
 
 <p class="info">
-Copyright (c) 2013-{{year}} The Critical Thinker's Paper.<br />This <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" rel="dct:type">work</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="{{pageurl}}" property="cc:attributionName" rel="cc:attributionURL">The Critical Thinker's Paper</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+Copyright (c) 2013-{{year}} The Critical Thinker's Paper.<br />This <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" rel="dct:type">work</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="{{pageurl}}" property="cc:attributionName" rel="cc:attributionURL">The Critical Thinker's Paper</a> is licensed under a <a target="_blank" rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
 </p>
 
 <div id="fb-root"></div>
