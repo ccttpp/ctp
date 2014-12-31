@@ -17,7 +17,7 @@
 
 <h2>{{title}}</h2>
 
-<div class="date">Written on {{date}} (<a href="https://github.com/criticalthinkers/ctp/commits/master/{{filepath}}">edit log available</a>)</div>
+<div class="date">Written on {{date}} (<a href="https://github.com/criticalthinkers/criticalthinkers/commits/master/{{filepath}}">edit log available</a>)</div>
 
 <div>{{text}}</div>
 
