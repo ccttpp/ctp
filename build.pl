@@ -30,6 +30,7 @@ sub build {
         my $data;
         my $list;
         my $fill;
+        my @parts;
 
         $data = read_as_string($filepath, 1);
 
@@ -39,6 +40,10 @@ sub build {
         $lookup{section} = $sectionname;
         $lookup{pageurl} = "$siteurl/$sectionname/$lookup{filename}";
         $lookup{$1} = $2 while ($data =~ /<(\w+)>(.+?)<\/\1>/g);
+
+        @parts = split /\//, $lookup{date};
+        @parts = map { (length($_) < 2 && ($_ * 1) < 10) ? "0$_" : $_ } @parts;
+        $lookup{date} = join("/", @parts);
 
         if (exists $article_index_lists{$sectionname}) {
             $list = $article_index_lists{$sectionname};
@@ -63,7 +68,7 @@ sub build {
 
         if ($continue_processing_index and $main_index_content =~ /{{$sectionname}}/) {
             if ($sectionname eq "essay") {
-                $lookup{first} = $saw_first_essay_for_index ? '' : ' first';
+                $lookup{first} = $saw_first_essay_for_index ? "" : " first";
                 $saw_first_essay_for_index = 1;
             }
 
