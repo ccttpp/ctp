@@ -15,9 +15,8 @@ sub build {
     my $continue_processing_index = 1;
     my $main_index_content;
     my $tagcloud = "";
+    my %years = ( "index" => years_init() );
     my $key;
-    my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime();
-    $year += 1900;
 
     $main_index_content = read_as_string("./template/index", 1);
 
@@ -30,11 +29,11 @@ sub build {
         my $data;
         my $list;
         my $fill;
+        my $year;
         my @parts;
 
         $data = read_as_string($filepath, 1);
 
-        $lookup{year} = $year;
         $lookup{filepath} = $filepath;
         $lookup{filename} = substr($articlename, length("yyyymmdd-")) . ".html";
         $lookup{section} = $sectionname;
@@ -44,6 +43,14 @@ sub build {
         @parts = split /\//, $lookup{date};
         @parts = map { (length($_) < 2 && ($_ * 1) < 10) ? "0$_" : $_ } @parts;
         $lookup{date} = join("/", @parts);
+
+        $year = $parts[0];
+        $lookup{year} = $year;
+        $years{$sectionname} = years_init() if !exists $years{$sectionname};
+        $years{$sectionname}{minyear} = $year if $year lt $years{$sectionname}{minyear};
+        $years{$sectionname}{maxyear} = $year if $year gt $years{$sectionname}{maxyear};
+        $years{index}{minyear} = $year if $year lt $years{index}{minyear};
+        $years{index}{maxyear} = $year if $year gt $years{index}{maxyear};
 
         if (exists $article_index_lists{$sectionname}) {
             $list = $article_index_lists{$sectionname};
@@ -86,7 +93,8 @@ sub build {
     foreach (keys %article_index_lists) {
         open FILE, ">", "$outdir/$_/index.html" or die $!;
         print FILE fill("\$article_index_lists{$_}", "./template/" . $_ . "_index", {
-            year => $year,
+            minyear => $years{$_}{minyear},
+            maxyear => $years{$_}{maxyear},
             list => $article_index_lists{$_},
             pageurl => "$siteurl/$_"
         });
@@ -101,7 +109,8 @@ sub build {
 
     $main_index_content =~ s/{{pageurl}}/$siteurl/;
     $main_index_content =~ s/{{tags}}/$tagcloud/;
-    $main_index_content =~ s/{{year}}/$year/;
+    $main_index_content =~ s/{{minyear}}/$years{index}{minyear}/;
+    $main_index_content =~ s/{{maxyear}}/$years{index}{maxyear}/;
     if ($main_index_content =~ /{{(.+?)}}/) {
         $key = $1;
         die "'$key' value needed by ./template/index not substituted";
@@ -146,6 +155,10 @@ sub fill {
     $template =~ s/([^-])--([^-])/$1&mdash;$2/g;
 
     return $template;
+}
+
+sub years_init {
+    return { "minyear" => "9999", "maxyear" => "0" };
 }
 
 sub get_tagcloud_class_lookup {
