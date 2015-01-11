@@ -34,7 +34,7 @@
 </div>
 
 <p class="info">
-Copyright (c) {{year}} The Critical Thinker's Paper.<br />This <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" rel="dct:type">work</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="{{pageurl}}" property="cc:attributionName" rel="cc:attributionURL">The Critical Thinker's Paper</a> is licensed under a <a target="_blank" rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.<br />All website code provided under the <a target="_blank" href="https://raw.github.com/criticalthinkers/criticalthinkers/master/LICENSE">MIT license</a>.
+Copyright (c) {{year}} The Critical Thinker's Paper.<br />This <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" rel="dct:type">work</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="{{pageurl}}" property="cc:attributionName" rel="cc:attributionURL">The Critical Thinker's Paper</a> is licensed under a <a target="_blank" rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.<br />All <a target="_blank" href="https://github.com/criticalthinkers/criticalthinkers">source code</a> used to generate this website and of the website itself is provided under the <a target="_blank" href="https://raw.github.com/criticalthinkers/criticalthinkers/master/LICENSE">MIT license</a>.
 </p>
 
 <div id="fb-root"></div>
