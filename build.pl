@@ -12,7 +12,6 @@ sub build {
     my %all_tags = ();
     my %tagcloud_class_lookup;
     my $saw_first_essay_for_index = 0;
-    my $continue_processing_index = 1;
     my $main_index_content;
     my $tagcloud = "";
     my %years = ( "index" => years_init() );
@@ -73,7 +72,7 @@ sub build {
             }
         }
 
-        if ($continue_processing_index and $main_index_content =~ /{{$sectionname}}/) {
+        if ($main_index_content =~ /{{$sectionname}}/) {
             if ($sectionname eq "essay") {
                 $lookup{first} = $saw_first_essay_for_index ? "" : " first";
                 $saw_first_essay_for_index = 1;
@@ -81,8 +80,6 @@ sub build {
 
             $fill = fill($filepath, "./template/" . $sectionname . "_in_index", \%lookup);
             $main_index_content =~ s/{{$sectionname}}/$fill/;
-        } else {
-            $continue_processing_index = 0;
         }
 
         open FILE, ">", "$outdir/$sectionname/$lookup{filename}" or die $!;
