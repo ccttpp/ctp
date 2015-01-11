@@ -1,5 +1,5 @@
 <div class="essay{{first}}">
-    <h2>{{title}}</h2>
+    <h2><a href="{{pageurl}}">{{title}}</a></h2>
     <div class="content">
 <h3>{{date}}</h3>
 {{text}}
